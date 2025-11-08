@@ -1,0 +1,735 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Custom Animations */
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float-utensil {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(-5deg);
+  }
+  75% {
+    transform: translateY(-15px) rotate(3deg);
+  }
+}
+
+@keyframes float-ingredient {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+    opacity: 0.1;
+  }
+  33% {
+    transform: translateY(-15px) translateX(10px) rotate(10deg);
+    opacity: 0.15;
+  }
+  66% {
+    transform: translateY(-5px) translateX(-10px) rotate(-10deg);
+    opacity: 0.12;
+  }
+}
+
+@keyframes chopping {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-5px) rotate(-10deg);
+  }
+  50% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-5px) rotate(10deg);
+  }
+}
+
+@keyframes mixing {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(90deg) scale(1.1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1);
+  }
+  75% {
+    transform: rotate(270deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes steam {
+  0% {
+    transform: translateY(0) scaleY(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translateY(-10px) scaleY(1.2);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-20px) scaleY(0.8);
+    opacity: 0;
+  }
+}
+
+@keyframes wiggle {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+.animate-fadeInDown {
+  animation: fadeInDown 0.6s ease-out forwards;
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-slideInLeft {
+  animation: slideInLeft 0.5s ease-out forwards;
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.5s ease-out forwards;
+}
+
+.animate-slideInUp {
+  animation: slideInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 3s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 2s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 3s linear infinite;
+}
+
+.animate-float-utensil {
+  animation: float-utensil 6s ease-in-out infinite;
+}
+
+.animate-float-ingredient {
+  animation: float-ingredient 8s ease-in-out infinite;
+}
+
+.animate-chopping {
+  animation: chopping 0.5s ease-in-out infinite;
+}
+
+.animate-mixing {
+  animation: mixing 2s linear infinite;
+}
+
+.animate-steam {
+  animation: steam 2s ease-out infinite;
+}
+
+.animate-wiggle {
+  animation: wiggle 0.5s ease-in-out infinite;
+}
+
+/* Smooth transitions for interactive elements */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Cooking-themed background */
+.cooking-background::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(251, 146, 60, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(245, 158, 11, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(234, 179, 8, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.cooking-card {
+  position: relative;
+}
+
+.cooking-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(135deg, rgba(251, 146, 60, 0.03) 0%, transparent 50%),
+    linear-gradient(45deg, transparent 50%, rgba(245, 158, 11, 0.03) 100%);
+  pointer-events: none;
+  border-radius: inherit;
+  z-index: 0;
+}
+
+/* Enhanced scrollbar with cooking theme */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(251, 146, 60, 0.1);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #ea580c 0%, #f97316 100%);
+}
+
+/* Cooking-themed selection color */
+::selection {
+  background-color: rgba(251, 146, 60, 0.3);
+  color: inherit;
+}
+
+::-moz-selection {
+  background-color: rgba(251, 146, 60, 0.3);
+  color: inherit;
+}
+
+/* Additional cooking animations */
+@keyframes cooking-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(251, 146, 60, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(251, 146, 60, 0.5);
+  }
+}
+
+.cooking-glow {
+  animation: cooking-glow 2s ease-in-out infinite;
+}
+
+/* Recipe Output Styling */
+.recipe-content {
+  position: relative;
+  line-height: 1.8;
+}
+
+.recipe-text {
+  font-family: 'Inter', 'Poppins', sans-serif;
+}
+
+.recipe-text p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+
+.recipe-heading {
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ea580c;
+  margin: 2rem 0 1rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid rgba(234, 88, 12, 0.3);
+  text-transform: capitalize;
+}
+
+.recipe-section {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #f97316;
+  margin: 2rem 0 1rem 0;
+  padding: 0.75rem;
+  background: linear-gradient(135deg, rgba(251, 146, 60, 0.1), rgba(234, 88, 12, 0.1));
+  border-left: 4px solid #f97316;
+  border-radius: 8px;
+}
+
+.recipe-step {
+  display: flex;
+  align-items: flex-start;
+  margin: 1rem 0;
+  padding: 1rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(251, 146, 60, 0.05));
+  border-radius: 10px;
+  border-left: 4px solid #f97316;
+  transition: all 0.3s ease;
+}
+
+.recipe-step:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(251, 146, 60, 0.1));
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(251, 146, 60, 0.2);
+}
+
+.step-number {
+  font-weight: 700;
+  color: #ea580c;
+  font-size: 1.1rem;
+  margin-right: 1rem;
+  min-width: 2rem;
+}
+
+.step-content {
+  flex: 1;
+  color: #374151;
+  line-height: 1.7;
+}
+
+.dark .step-content {
+  color: #e5e7eb;
+}
+
+.recipe-bullet {
+  margin: 0.75rem 0;
+  padding: 0.75rem 1rem;
+  padding-left: 2rem;
+  background: rgba(251, 146, 60, 0.08);
+  border-radius: 8px;
+  position: relative;
+  line-height: 1.7;
+  transition: all 0.3s ease;
+}
+
+.recipe-bullet:hover {
+  background: rgba(251, 146, 60, 0.15);
+  transform: translateX(5px);
+}
+
+.recipe-bullet::before {
+  content: '';
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background: #f97316;
+  border-radius: 50%;
+}
+
+.recipe-bold {
+  font-weight: 700;
+  color: #ea580c;
+  background: rgba(234, 88, 12, 0.1);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+}
+
+.recipe-italic {
+  font-style: italic;
+  color: #9a3412;
+}
+
+.dark .recipe-italic {
+  color: #fbbf24;
+}
+
+.recipe-paragraph {
+  margin: 1.5rem 0;
+  line-height: 1.8;
+}
+
+/* Diet Plan Output Styling */
+.diet-content {
+  position: relative;
+  line-height: 1.8;
+}
+
+.diet-text {
+  font-family: 'Inter', 'Poppins', sans-serif;
+}
+
+.diet-text p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+
+.diet-meal-title {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #059669;
+  margin: 2.5rem 0 1.5rem 0;
+  padding: 1rem 1.25rem;
+  background: linear-gradient(135deg, rgba(5, 150, 105, 0.15), rgba(16, 185, 129, 0.1));
+  border-left: 5px solid #10b981;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.1);
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+}
+
+.diet-item {
+  display: flex;
+  align-items: flex-start;
+  margin: 1.25rem 0;
+  padding: 1.25rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.6), rgba(16, 185, 129, 0.08));
+  border-radius: 12px;
+  border-left: 4px solid #10b981;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(5, 150, 105, 0.1);
+}
+
+.diet-item:hover {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(16, 185, 129, 0.15));
+  transform: translateX(8px);
+  box-shadow: 0 6px 16px rgba(5, 150, 105, 0.2);
+}
+
+.item-number {
+  font-weight: 700;
+  color: #059669;
+  font-size: 1.15rem;
+  margin-right: 1.25rem;
+  min-width: 2.5rem;
+  background: rgba(16, 185, 129, 0.2);
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-content {
+  flex: 1;
+  color: #374151;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.dark .item-content {
+  color: #e5e7eb;
+}
+
+.diet-bullet {
+  margin: 1rem 0;
+  padding: 1rem 1.25rem;
+  padding-left: 2.5rem;
+  background: rgba(16, 185, 129, 0.1);
+  border-radius: 10px;
+  position: relative;
+  line-height: 1.8;
+  transition: all 0.3s ease;
+  font-size: 1.05rem;
+}
+
+.diet-bullet:hover {
+  background: rgba(16, 185, 129, 0.2);
+  transform: translateX(8px);
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.15);
+}
+
+.diet-bullet::before {
+  content: '';
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.5);
+}
+
+.diet-calories {
+  display: inline-block;
+  font-weight: 700;
+  color: #059669;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(5, 150, 105, 0.15));
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  border: 2px solid rgba(16, 185, 129, 0.3);
+  margin: 0 0.25rem;
+  font-size: 0.95rem;
+}
+
+.diet-bold {
+  font-weight: 700;
+  color: #059669;
+  background: rgba(16, 185, 129, 0.15);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  border-left: 3px solid #10b981;
+}
+
+.diet-italic {
+  font-style: italic;
+  color: #047857;
+}
+
+.dark .diet-italic {
+  color: #34d399;
+}
+
+.diet-paragraph {
+  margin: 1.5rem 0;
+  line-height: 1.9;
+  font-size: 1.05rem;
+}
+
+/* Dark mode adjustments */
+.dark .recipe-heading {
+  color: #fb923c;
+  border-bottom-color: rgba(251, 146, 60, 0.5);
+}
+
+.dark .recipe-section {
+  color: #fb923c;
+  background: linear-gradient(135deg, rgba(251, 146, 60, 0.2), rgba(234, 88, 12, 0.15));
+}
+
+.dark .recipe-step {
+  background: linear-gradient(135deg, rgba(31, 41, 55, 0.6), rgba(251, 146, 60, 0.1));
+}
+
+.dark .recipe-step:hover {
+  background: linear-gradient(135deg, rgba(31, 41, 55, 0.8), rgba(251, 146, 60, 0.2));
+}
+
+.dark .step-number {
+  color: #fb923c;
+}
+
+.dark .recipe-bullet {
+  background: rgba(251, 146, 60, 0.15);
+}
+
+.dark .recipe-bullet:hover {
+  background: rgba(251, 146, 60, 0.25);
+}
+
+.dark .recipe-bold {
+  color: #fb923c;
+  background: rgba(251, 146, 60, 0.2);
+}
+
+.dark .diet-meal-title {
+  color: #34d399;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(5, 150, 105, 0.15));
+  border-left-color: #34d399;
+}
+
+.dark .diet-item {
+  background: linear-gradient(135deg, rgba(31, 41, 55, 0.7), rgba(16, 185, 129, 0.12));
+}
+
+.dark .diet-item:hover {
+  background: linear-gradient(135deg, rgba(31, 41, 55, 0.9), rgba(16, 185, 129, 0.2));
+}
+
+.dark .item-number {
+  color: #34d399;
+  background: rgba(16, 185, 129, 0.3);
+}
+
+.dark .diet-bullet {
+  background: rgba(16, 185, 129, 0.15);
+}
+
+.dark .diet-bullet:hover {
+  background: rgba(16, 185, 129, 0.25);
+}
+
+.dark .diet-calories {
+  color: #34d399;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.25), rgba(5, 150, 105, 0.2));
+  border-color: rgba(52, 211, 153, 0.4);
+}
+
+.dark .diet-bold {
+  color: #34d399;
+  background: rgba(16, 185, 129, 0.2);
+  border-left-color: #34d399;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .recipe-heading,
+  .recipe-section,
+  .diet-meal-title {
+    font-size: 1.25rem;
+    padding: 0.75rem;
+  }
+
+  .recipe-step,
+  .diet-item {
+    padding: 0.875rem;
+    margin: 0.875rem 0;
+  }
+
+  .step-number,
+  .item-number {
+    font-size: 1rem;
+    min-width: 2rem;
+    margin-right: 0.75rem;
+  }
+
+  .recipe-text,
+  .diet-text {
+    font-size: 0.95rem;
+  }
+}
