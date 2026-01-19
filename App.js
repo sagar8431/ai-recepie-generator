@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 // We load Tailwind via the <script> tag in the HTML, so no import is needed.
 
-// Enhanced notification component with better animations
+// Enhancedmy deskas amd i am using api notification component with better animations
 function Notification({ message, onClose }) {
   if (!message) return null;
 
